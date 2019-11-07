@@ -1,0 +1,50 @@
+{% extends 'base.jinja2' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Task Master</h1>
+   <div class="content">
+ {% if tasks|length < 1 %}
+   <h1>You have Not Entered a task</h1>
+   {% else %}
+       <table>
+    <tr>
+       <td>
+           Tasks
+       </td>
+        <td>
+           Added
+       </td>
+        <td>
+           Actions
+       </td>
+
+    </tr>
+    {% for task in tasks  %}
+        <tr>
+            <td>
+            {{ task.content}}
+           </td>
+            <td>
+            {{ task.date_created.date() }}
+           </td>
+            <td>
+
+               <a href="/delete/{{ task.id }}">Delete</a>
+                <br>
+                <a href="/update/{{ task.id }}">Update</a>
+           </td>
+
+        </tr>
+    {% endfor %}
+    </table>
+   {% endif %}
+   <form action="/" method="POST">
+       <input type="text" name="content" id="content">
+       <input type="submit" value="Add Task">
+   </form>
+   </div>
+{% endblock %}
