@@ -31,7 +31,7 @@ gui-automation==3.0.3
 gui2py==0.9.6.1
 gunicorn==19.9.0
 h5py==2.10.0
-httplib2==0.14.0
+httplib2==0.18.0
 importlib-metadata==0.23
 invoke==1.3.0
 ipykernel==5.1.3
